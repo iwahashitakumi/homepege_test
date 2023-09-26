@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calendar_date: 2023-09-26
+  title: MyString
+  start_datetime: 2023-09-26 15:13:35
+  end_datetime: 2023-09-26 15:13:35
+  body: MyText
+
+two:
+  calendar_date: 2023-09-26
+  title: MyString
+  start_datetime: 2023-09-26 15:13:35
+  end_datetime: 2023-09-26 15:13:35
+  body: MyText
