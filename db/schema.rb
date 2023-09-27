@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_27_050406) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_27_050856) do
   create_table "articles", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.datetime "start_datetime", null: false
     t.datetime "end_datetime", null: false
     t.text "body", default: "", null: false
     t.string "article_images", default: ""
-    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -98,7 +96,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_050406) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "articles", "users"
   add_foreign_key "contacts", "users"
   add_foreign_key "job_entries", "users"
   add_foreign_key "shops", "users"
