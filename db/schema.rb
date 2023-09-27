@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_27_083644) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_27_085220) do
   create_table "articles", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
@@ -51,6 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_083644) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+    t.integer "prefectures_id", null: false
+    t.index ["prefectures_id"], name: "index_job_entries_on_prefectures_id"
     t.index ["user_id"], name: "index_job_entries_on_user_id"
   end
 
@@ -101,5 +103,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_083644) do
   end
 
   add_foreign_key "contacts", "users"
+  add_foreign_key "job_entries", "prefectures", column: "prefectures_id"
   add_foreign_key "job_entries", "users"
 end
