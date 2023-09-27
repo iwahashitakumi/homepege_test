@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_27_124122) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_27_125900) do
   create_table "articles", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
@@ -20,7 +20,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_124122) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "sets", default: "[{\"body\": \"\", \"article_images\": \"\"}]", null: false
-    t.integer "prefectures_id", null: false
     t.integer "category", null: false
   end
 
