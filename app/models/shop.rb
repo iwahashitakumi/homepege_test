@@ -1,3 +1,3 @@
 class Shop < ApplicationRecord
-  belongs_to :prefectures
+  belongs_to :prefecture
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_27_141909) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_28_010049) do
   create_table "articles", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
@@ -52,9 +52,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_141909) do
     t.integer "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "prefectures_id", null: false
+    t.integer "prefecture_id", null: false
     t.integer "update_by_id"
-    t.index ["prefectures_id"], name: "index_job_entries_on_prefectures_id"
+    t.index ["prefecture_id"], name: "index_job_entries_on_prefecture_id"
     t.index ["update_by_id"], name: "index_job_entries_on_update_by_id"
   end
 
@@ -88,9 +88,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_141909) do
     t.string "shop_images", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "prefectures_id", null: false
+    t.integer "prefecture_id", null: false
     t.string "city_name", default: "", null: false
-    t.index ["prefectures_id"], name: "index_shops_on_prefectures_id"
+    t.index ["prefecture_id"], name: "index_shops_on_prefecture_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,7 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_141909) do
   end
 
   add_foreign_key "contacts", "users", column: "update_by_id"
-  add_foreign_key "job_entries", "prefectures", column: "prefectures_id"
+  add_foreign_key "job_entries", "prefectures"
   add_foreign_key "job_entries", "users", column: "update_by_id"
-  add_foreign_key "shops", "prefectures", column: "prefectures_id"
+  add_foreign_key "shops", "prefectures"
 end
