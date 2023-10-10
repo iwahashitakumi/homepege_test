@@ -72,4 +72,7 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'react-rails'
 gem 'devise'
+
+gem "shakapacker", "= 7.1"
